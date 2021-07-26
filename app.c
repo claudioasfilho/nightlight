@@ -108,6 +108,11 @@
 // Configuration
 
 #define SHUTDOWN_TIMEOUT_MS             60000
+
+#define HOUR 3600
+#define SLEEPINGTIME  11
+
+static uint16_t timeCounter = 0;
 // -----------------------------------------------------------------------------
 // Private variables
 
@@ -161,7 +166,7 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
     // -------------------------------
     case sl_bt_evt_system_boot_id:
 
-      rgb_led_set(1, 70, 0, 0);
+      rgb_led_set(0xff, 30, 0, 0);
       // Print boot message.
       app_log_info("Bluetooth stack booted: v%d.%d.%d-b%d",
                    evt->data.evt_system_boot.major,
@@ -198,6 +203,10 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
                                                    system_id);
       app_assert_status(sc);
       advertise_init(unique_id);
+
+      sl_bt_system_set_soft_timer ( 32768, 0, 0);
+
+
       break;
 
     // -------------------------------
@@ -216,6 +225,20 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
       advertise_start();
       //shutdown_start_timer();
       sensor_deinit();
+      break;
+
+    case  sl_bt_evt_system_soft_timer_id:
+
+
+
+      if (evt->data.evt_system_soft_timer.handle == 0)
+        {
+          if(timeCounter++>=SLEEPINGTIME*HOUR)
+            {
+              rgb_led_set(0xff, 0, 70, 0);
+            }
+        }
+
       break;
 
     // -------------------------------
