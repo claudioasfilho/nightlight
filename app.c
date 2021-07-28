@@ -112,6 +112,8 @@
 #define HOUR 3600
 #define SLEEPINGTIME  11
 
+uint16_t UserSleepingTime = SLEEPINGTIME;
+
 static uint16_t timeCounter = 0;
 // -----------------------------------------------------------------------------
 // Private variables
@@ -166,7 +168,7 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
     // -------------------------------
     case sl_bt_evt_system_boot_id:
 
-      rgb_led_set(0xff, 30, 0, 0);
+      rgb_led_set(0xff, 40, 0, 0);
       // Print boot message.
       app_log_info("Bluetooth stack booted: v%d.%d.%d-b%d",
                    evt->data.evt_system_boot.major,
@@ -211,8 +213,12 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
 
     // -------------------------------
     case sl_bt_evt_connection_opened_id:
+
+      //Upon a new connection Reset the LED Light to Red
+      rgb_led_set(0xff, 40, 0, 0);
+      timeCounter = 0;
       app_log_info("Connection opened");
-      app_log_nl();
+      //app_log_nl();
       advertise_stop();
      // shutdown_stop_timer();
       sensor_init();
@@ -224,8 +230,29 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
       app_log_nl();
       advertise_start();
       //shutdown_start_timer();
-      sensor_deinit();
+      //sensor_deinit();
       break;
+
+//
+//    case sl_bt_evt_gatt_server_user_write_request_id:
+//         // If user-type OTA Control Characteristic was written, boot the device
+//         // into Device Firmware Upgrade (DFU) mode.
+//         if (evt->data.evt_gatt_server_user_write_request.characteristic
+//             == gattdb_HoursToSleep) {
+//           // Set flag to enter OTA mode.
+//             UserSleepingTime = evt->data.evt_gatt_server_user_write_request.value.data[0] + (evt->data.evt_gatt_server_user_write_request.value.data[1]<<8);
+//
+//
+//           // Send response to user write request.
+//           sc = sl_bt_gatt_server_send_user_write_response(
+//             evt->data.evt_gatt_server_user_write_request.connection,
+//             gattdb_HoursToSleep,
+//             SL_STATUS_OK);
+//           app_assert_status(sc);
+//
+//         }
+//         break;
+
 
     case  sl_bt_evt_system_soft_timer_id:
 
@@ -233,9 +260,9 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
 
       if (evt->data.evt_system_soft_timer.handle == 0)
         {
-          if(timeCounter++>=SLEEPINGTIME*HOUR)
+          if(timeCounter++>=UserSleepingTime*HOUR)
             {
-              rgb_led_set(0xff, 0, 70, 0);
+              rgb_led_set(0xff, 0, 40, 0);
             }
         }
 

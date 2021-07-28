@@ -1,5 +1,5 @@
 gecko_sdk_3.2.0/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.o: \
- /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.c \
+ ../gecko_sdk_3.2.0/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.c \
  /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//platform/common/toolchain/inc/sl_gcc_preinclude.h \
  /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//platform/common/inc/sl_status.h \
  /Users/clfilho/SimplicityStudio/May_21/soc_thunderboard_brd4166a/autogen/gatt_db.h \
@@ -91,7 +91,7 @@ gecko_sdk_3.2.0/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.o: \
  /Users/clfilho/SimplicityStudio/May_21/soc_thunderboard_brd4166a/autogen/sl_simple_led_instances.h \
  /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//platform/driver/leddrv/inc/sl_simple_led.h \
  /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//platform/driver/leddrv/inc/sl_led.h \
- /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.h \
+ /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.h \
  /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//protocol/bluetooth/inc/sl_bt_api.h \
  /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//protocol/bluetooth/inc/sl_bgapi.h \
  /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//protocol/bluetooth/inc/sl_bt_api_compatibility.h
@@ -186,7 +186,7 @@ gecko_sdk_3.2.0/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.o: \
 /Users/clfilho/SimplicityStudio/May_21/soc_thunderboard_brd4166a/autogen/sl_simple_led_instances.h:
 /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//platform/driver/leddrv/inc/sl_simple_led.h:
 /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//platform/driver/leddrv/inc/sl_led.h:
-/Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.h:
+/Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.h:
 /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//protocol/bluetooth/inc/sl_bt_api.h:
 /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//protocol/bluetooth/inc/sl_bgapi.h:
 /Applications/SimplicityStudio5.app/Contents/Eclipse/developer/sdks/gecko_sdk_suite/v3.2//protocol/bluetooth/inc/sl_bt_api_compatibility.h:

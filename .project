@@ -414,11 +414,6 @@
 			<locationURI>STUDIO_SDK_LOC/util/third_party/printf/printf.h</locationURI>
 		</link>
 		<link>
-			<name>gecko_sdk_3.2.0/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.c</locationURI>
-		</link>
-		<link>
 			<name>gecko_sdk_3.2.0/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.h</locationURI>
